@@ -16,16 +16,23 @@ Route::get('/jobs', function () {
         'jobs' => Job::all()
     ]);
 });
-Route::get('/employers', function () {
-    return view('employers', [
-        'employers' => employer::all()
-    ]);
-});
 
 Route::get('/jobs/{id}', function ($id) {
     // $job = Arr::first(Job::all(), fn($job) => $job['id'] == $id);
     $job = Job::find($id);
     return view('job', ['job' => $job]);
+});
+
+Route::get('/employers', function () {
+    return view('employers', [
+        'employers' => Employer::all()
+    ]);
+});
+
+Route::get('/employers/{id}', function ($id) {
+    // $job = Arr::first(Job::all(), fn($job) => $job['id'] == $id);
+    $employer = Employer::find($id);
+    return view('employer', ['employer' => $employer]);
 });
 
 Route::get('/contact', function () {

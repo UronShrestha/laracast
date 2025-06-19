@@ -17,49 +17,10 @@ class Job extends Model
         'title',
         'salary',
     ];
-    // public static function all(): array{
 
-    // }
-
-    // public static function find(int $id): array
-    // {
-    //     $job = Arr::first(static::all(), fn($job) => $job['id'] == $id);
-    //     if (!$job) {
-    //         abort(404);
-    //     }
-    //     return $job;
-    // }
+    public function employer(){
+        return $this->belongsTo(Employer::class);
+    }
+    
 }
 
-// class Job
-// {
-//     public static function all(): array
-//     {
-//         return [
-//             [
-//                 'id' => 1,
-//                 'title' => 'Teacher',
-//                 'salary' => '$10000'
-//             ],
-//             [
-//                 'id' => 2,
-//                 'title' => 'Chef',
-//                 'salary' => '$5000'
-//             ],
-//             [
-//                 'id' => 3,
-//                 'title' => 'Army',
-//                 'salary' => '$7000'
-//             ]
-//         ];
-//     }
-
-//     public static function find(int $id): array
-//     {
-//         $job = Arr::first(static::all(), fn($job) => $job['id'] == $id);
-//         if (!$job) {
-//             abort(404);
-//         }
-//         return $job;
-//     }
-// }

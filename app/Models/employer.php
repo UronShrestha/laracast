@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class employer extends Model
+class Employer extends Model
 {
     /** @use HasFactory<\Database\Factories\EmployerFactory> */
     use HasFactory;
@@ -14,4 +14,8 @@ class employer extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function jobs(){
+        return $this->hasMany(Job::class);
+    }
 }
