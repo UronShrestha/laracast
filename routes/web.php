@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\employer;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
@@ -13,6 +14,11 @@ Route::get('/', function () {
 Route::get('/jobs', function () {
     return view('jobs', [
         'jobs' => Job::all()
+    ]);
+});
+Route::get('/employers', function () {
+    return view('employers', [
+        'employers' => employer::all()
     ]);
 });
 
