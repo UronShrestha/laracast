@@ -40,8 +40,8 @@
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                                 <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                                 <x-nav-link href="/jobs" :active="request()->is('jobs')">jobs</x-nav-link>
-                                <x-nav-link href="/contact" :active="request()->is('contact')">contact</x-nav-link>
                                 <x-nav-link href="/employers" :active="request()->is('employers')">employers</x-nav-link>
+                                <x-nav-link href="/contact" :active="request()->is('contact')">contact</x-nav-link>
                                 
                             </div>
                         </div>
@@ -108,10 +108,10 @@
                     <a href="/"
                         class=" {{ request()->is('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md  px-3 py-2 text-sm font-medium "
                         aria-current="page">Home</a>
-                    <a href="/contact"
-                        class="{{ request()->is('/contact') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Contact</a>
-                    <a href="/jobs"
+                        <a href="/jobs"
                         class="{{ request()->is('/jobs') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium ">jobs</a>
+                        <a href="/contact"
+                            class="{{ request()->is('/contact') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Contact</a>
                 </div>
                 <div class="border-t border-gray-700 pt-4 pb-3">
                     <div class="flex items-center px-5">
