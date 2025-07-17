@@ -21,17 +21,22 @@ Route::get('/jobs', function () {
 });
 
 Route::get('/jobs/create', function() {
-    return view('jobs/create');
+    return view('jobs.create');
 });
 
 Route::get('/jobs/{id}', function ($id) {
     // $job = Arr::first(Job::all(), fn($job) => $job['id'] == $id);
     $job = Job::find($id);
-    return view('jobs/show', ['job' => $job]);
+    return view('jobs.show', ['job' => $job]);
 });
 
 Route::post('/jobs', function(){
-    // dd(request()->all());
+    //validate
+    request()->validate([
+        'title' => ['required','min:2'],
+        'salary' => ['required'],
+        ]);
+        //create
     Job::create([
         'title' => request('title'),
         'salary' => request('salary'),
